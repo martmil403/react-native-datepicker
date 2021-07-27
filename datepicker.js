@@ -182,7 +182,7 @@ class DatePicker extends Component {
       <Text
         allowFontScaling={allowFontScaling}
         style={[Style.dateText, customStyles.dateText]}>
-        {this.getDateStr()}
+        {this.props.labelDate || this.getDateStr()}
       </Text>
     );
   }
@@ -473,6 +473,7 @@ DatePicker.propTypes = {
     PropTypes.instanceOf(Date),
     PropTypes.object,
   ]),
+  labelDate: PropTypes.string,
   format: PropTypes.string,
   minDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
   maxDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
