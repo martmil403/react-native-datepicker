@@ -419,7 +419,7 @@ class DatePicker extends Component {
               mode="time"
               value={this.state.date}
               onChange={this.onTimePicked}
-              display="clock"
+              display={Platform.OS === "ios" ? "spinner" : "clock"}
             />
           ) : null}
           {Platform.OS === "android" && ((mode === "date" && this.state.isPicker) ||
@@ -432,7 +432,7 @@ class DatePicker extends Component {
               maximumDate={maxDate && this.getDate(maxDate)}
               value={this.state.date}
               onChange={this.onDatePicked}
-              display="calendar"
+              display={Platform.OS === "ios" ? "spinner" : "calendar"}
             />
           ) : null}
         </View>
